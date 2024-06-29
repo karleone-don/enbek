@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная биржа труда enbek.kz | Профориентационная страница</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="https://www.enbek.kz/_v2/assets/img/logo_black.svg" alt="">
+            <button class="platforms"></button>
+            <div class="nav-menu">
+                <a class="nav-menu-text" href="">Резюме</a>
+                <a class="nav-menu-text" href="">Вакансии</a>
+                <a class="nav-menu-text" href="">Услуги</a>
+                <a class="nav-menu-text" href="">Enbek Lifehacks</a>
+            </div>
+        </div>
+        <div class="navbar-section">
+            <button class="button-primary circle bvi-open">
+                <svg width="19" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3712 9.53996C11.3712 10.8495 10.3092 11.9107 8.99966 11.9107C7.69016 11.9107 6.62891 10.8495 6.62891 9.53996C6.62891 8.22971 7.69016 7.16846 8.99966 7.16846C10.3092 7.16846 11.3712 8.22971 11.3712 9.53996Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.9985 15.0162C11.8545 15.0162 14.4668 12.9627 15.9375 9.53973C14.4668 6.11673 11.8545 4.06323 8.9985 4.06323H9.0015C6.1455 4.06323 3.53325 6.11673 2.0625 9.53973C3.53325 12.9627 6.1455 15.0162 9.0015 15.0162H8.9985Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <a href="/kk" class="button-outline-white">Қаз</a>
+            <a href="https://passport.enbek.kz/ru/user/login?redirect_uri=https://www.enbek.kz/ru&amp;redirect=strict" class="button-login login">Войти</a>
+        </div>
+    </header>
+
+    <svg id="spinner" class="spinner" viewBox="0 0 50 50">
+        <circle id="path" class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+    <h1 id="spinner-text" class="spinner-text">
+        Минутку, обрабатываем ваш запрос...
+    </h1>
+
+    <div id="screen1" class="screen1">
+        <div class="title">
+            Профориентация с дальнейшими советами для развития профессии
+        </div>
+        <div class="main-block">
+            <div class="main-block-col">
+                <h2 class="block-title">1. Общая информация</h2>
+                
+                <p class="marker">Пол</p>
+                <div>
+                    <button id="button-female" onclick="changeGender('female')" class="gender-button">Женский</button>
+                    <button id="button-male" onclick="changeGender('male')" class="gender-button">Мужской</button>
+                </div>
+
+                <p class="marker">Возраст</p>
+                <input id="age" class="input-age" value="" step="1" min="0" max="125" type="number">
+
+                <p class="marker">Уровень образования</p>
+                <input id="education" class="input-edlevel" type="text">
+
+                <p class="marker">Опыт работы</p>
+                <textarea id="experience" class="input-experience" name="" id="" 
+                placeholder="Распишите подробнее, кем вы работали, в какой временной промежуток, какие роли выполняли и к каким результатам пришли..."></textarea>
+            </div>
+            <div class="main-block-col">
+                <h2 class="block-title">2. Подробная информация</h2>
+
+                <p class="marker">Добавьте свои навыки, хобби, а также предпочтительное направление по работе</p>
+
+                <textarea id="information" style="height: 100%;" class="input-experience" placeholder="Пишите здесь..." name="" id=""></textarea>
+            </div>
+            <div class="main-block-col">
+                <h2 class="block-title">3. Профессиональные навыки</h2>
+
+                <p class="marker">Ответьте на несколько вопросов</p>
+                <div class="prof-areas">
+                    <textarea id="project" style="height: calc(100% / 3)" class="input-experience" name="" id="" 
+                    placeholder="Опишите последний проект, над которым вы работали. Какие были вашей роли и обязанности?"></textarea>
+                    <textarea id="timeManagement" style="height: calc(100% / 3)" class="input-experience" name="" id="" 
+                    placeholder="Как вы организуете свой рабочий день?"></textarea>
+                    <textarea id="situation" style="height: calc(100% / 3 )" class="input-experience" name="" id="" 
+                    placeholder="Опишите ситуацию, когда вам пришлось изменить своё мнение или подход к работе"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="div-button">
+            <button onclick="nextScreen()" class="continue-button">Продолжить</button>
+        </div>
+    </div>
+
+    <div id="screen2" class="screen2">
+        <div class="info-cols">
+            <div id="info-col-conclusion" class="info-col"></div>
+            <div id="info-col-advice" class="info-col"></div>
+        </div>
+        <div class="div-button">
+            <button onclick="onMain()" class="continue-button">На главную</button>
+        </div>
+    </div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
